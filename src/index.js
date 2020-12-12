@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './home/home';
+import Detail from './detail/detail';
+import Archives from './archives/archives';
+import Categories from './categories/categories';
+import Tags from './tags/tag';
+import About from './about/about';
 
-function Example() {
-  // 声明一个新的叫做 “count” 的 state 变量
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
-  );
-}
-
-ReactDOM.render(<Example />, document.getElementById('root'));
+ReactDOM.render(
+  <Router>
+    <Switch>
+      <Route path="/detail/:id" component={Detail} />
+      <Route path="/archives" component={Archives} />
+      <Route path="/categories" component={Categories} />
+      <Route path="/tags" component={Tags} />
+      <Route path="/about" component={About} />
+      <Route path="/" component={Home} />
+    </Switch>
+  </Router>,
+  document.getElementById('root'),
+);

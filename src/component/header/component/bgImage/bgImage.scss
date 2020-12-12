@@ -1,0 +1,94 @@
+.bg {
+  background: url('../../../../../static/img/nav.jpg') center center / cover no-repeat;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-attachment: fixed;
+  }
+}
+
+.rgba-black-light {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.typing-container {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2rem;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 0.7s infinite;
+}
+
+.scroll-down-bar {
+  position: absolute;
+  width: 100%;
+  font-size: 2rem;
+  height: 6rem;
+  text-align: center;
+  cursor: pointer;
+  bottom: 0;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0.8;
+    top: 0;
+  }
+  50% {
+    opacity: 0.4;
+    top: -1rem;
+  }
+  100% {
+    opacity: 0.8;
+    top: 0;
+  }
+}
+
+.scroll-down-bar-icon {
+  position: absolute;
+  padding-top: 2rem;
+  width: 2rem;
+  animation: scroll-down 1.5s infinite;
+}
