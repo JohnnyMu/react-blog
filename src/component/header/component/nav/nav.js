@@ -17,7 +17,7 @@ export default function MyNav() {
   ];
 
   useEffect(() => {
-    window.addEventListener('scroll', tool(navOnScroll, 500));
+    window.addEventListener('scroll', tool(navOnScroll, 200));
   }, []);
 
   function navOnScroll() {
@@ -50,7 +50,7 @@ export default function MyNav() {
           </div>
         </button>
 
-        <div className={classnames('navbar-collapse navbar-display', { 'show': openButton })}>
+        <div className={classnames('navbar-collapse navbar-display', { show: openButton })}>
           <ul className="navbar-nav">
             {navMenu.map((it) => (
               <li className="nav-item" key={it.content}>

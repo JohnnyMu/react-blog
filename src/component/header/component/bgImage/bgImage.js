@@ -9,6 +9,9 @@ export default function BgImage() {
       startTyping();
     }
   }, [content]);
+  useEffect(() => {
+    window.addEventListener('scroll', parallax);
+  }, []);
 
   function startTyping() {
     let node = document.getElementById('subtitle');
@@ -23,8 +26,21 @@ export default function BgImage() {
     }, 80);
   }
 
+  function parallax() {
+    let node = document.getElementById('parallax');
+    let board = document.getElementById('board');
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    let top = scrollTop / 5;
+    let offset = parseInt(board.style.marginTop) || 0;
+    let max = 96 + offset;
+    if (top > max) {
+      top = max;
+    }
+    node.style.transform = 'translateY(' + top + 'px)';
+  }
+
   return (
-    <div className="bg">
+    <div id="parallax" className="bg parallax">
       <div className="mask flex-center rgba-black-light">
         <div className="typing-container">
           <span className="h2" id="subtitle" />
